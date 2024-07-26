@@ -72,11 +72,11 @@ h1 {
     text-align: center;
 }
 
-.card:hover {
+/* .card:hover {
     background-color: #070505;
     color: white;
     transform: scale(1.2);
-}
+} */
 
 .card img {
     width: 100%;
