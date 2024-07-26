@@ -1,0 +1,48 @@
+// Arquivo: broBank.js
+
+// Variável que armazena o saldo do usuário logado
+let saldo = 5000;
+
+// Função para realizar depósito
+function  depositar(valor) {
+    if (valor <= 0) {
+        console.log("O valor do depósito deve ser maior que zero.");
+        return;
+    }
+    saldo += valor;
+    console.log(`Depósito realizado com sucesso! Novo saldo: R$ ${saldo.toFixed(2)}`);
+}
+
+// Função para realizar saque
+function sacar(valor) {
+    if (valor <= 0) {
+        console.log("O valor do saque deve ser maior que zero.");
+        return;
+    }
+    if (valor > saldo) {
+        console.log("Saldo insuficiente para realizar o saque. Deseja um empréstimo?");
+        return;
+    }
+    saldo -= valor;
+    console.log(`Saque realizado com sucesso! Novo saldo: R$ ${saldo.toFixed(2)}`);
+}
+
+// Função para realizar transferência
+function transferir(valor, contaDestino) {
+    if (valor <= 0) {
+        console.log("O valor da transferência deve ser maior que zero.");
+        return;
+    }
+    if (valor > saldo) {
+        console.log("Saldo insuficiente para realizar a transferência. Deseja um empréstimo?");
+        return;
+    }
+    saldo -= valor;
+    // Aqui, você pode adicionar lógica para atualizar o saldo da conta de destino
+    console.log(`Transferência de R$ ${valor.toFixed(2)} para a conta ${contaDestino} realizada com sucesso! Novo saldo: R$ ${saldo.toFixed(2)}`);
+}
+
+// Exemplo de uso no console do navegador:
+// depositar(100);
+// sacar(50);
+// transferir(30, 'ContaDestino123');
